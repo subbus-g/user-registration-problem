@@ -30,7 +30,9 @@ do
             ;;
         5)
             #password minimum lenth 8
+            #atleast have 1 uppercase
             pattern=".{8,}"
+            pattern="(.*[A-Z].*){8,}"
             ;;
         6)
             echo "exiting......"
