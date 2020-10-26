@@ -8,6 +8,8 @@ do
     
     case $option in 
         1)
+            #first name should start with capital letter and
+            #has minimum 3 characters
             pattern="^[A-Z][a-zA-Z]{2,}$"
             ;;
         5)
