@@ -32,7 +32,8 @@ do
         5)
             #password minimum lenth 8
             #atleast have 1 uppercase
-            pattern="(?=.{8,}).*[A-Z].*"
+            #atlest have 1 numbers
+            pattern="(?=.*[A-Z])(?=.*[0-9]).{8,}"
             #since =~ doesn't support lookheads
             #grep is used with -P for perl
             #regex engine
