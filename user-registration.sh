@@ -9,6 +9,7 @@ do
     echo "5 for entering password"
     echo "6 for exit"
     read -p "enter your option:" option
+    read -p "enter your input:" input
     
     case $option in 
         1 | 2)
@@ -31,21 +32,27 @@ do
         5)
             #password minimum lenth 8
             #atleast have 1 uppercase
-            pattern=".{8,}"
-            pattern="(.*[A-Z].*){8,}"
+            pattern="(?=.{8,}).*[A-Z].*"
+            result=$(echo $input | grep -P $pattern)
+            if [ -z "${result}" ]
+            then 
+                echo "$input is not valid password"; 
+            else 
+                echo "$input is valid password";
+            fi             
             ;;
         6)
             echo "exiting......"
-            exit
+            exit 2
             ;;
         *)
             echo 'enter valid option'
             ;;
     esac
 
-    if [[ $option =~ ^[12345]$ ]]
+    if [[ $option =~ ^[1234]$ ]]
     then
-        read -p "enter your input:" input
+        
         if [[ $input =~ $pattern ]]
         then
             echo "$input is valid"
