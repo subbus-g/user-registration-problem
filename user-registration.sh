@@ -33,6 +33,9 @@ do
             #password minimum lenth 8
             #atleast have 1 uppercase
             pattern="(?=.{8,}).*[A-Z].*"
+            #since =~ doesn't support lookheads
+            #grep is used with -P for perl
+            #regex engine
             result=$(echo $input | grep -P $pattern)
             if [ -z "${result}" ]
             then 
