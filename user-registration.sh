@@ -21,7 +21,7 @@ do
             #abc.xyz@bl.co.in
             #email has 3 mandatory parts(abc,bl&co) and 2 optional
             #(xyz & in ) with precise @ and . postions
-            pattern="^[a-z]{3,}(.[a-z]*)?@([a-z]){2,}.[a-z]+(.in)*"
+            pattern="^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[0-9a-zA-Z]+.[a-zA-Z]{2,4}+([.][a-zA-Z]{2,3})?$"
             ;;
         4)
             #phonenumber have country code and 10
